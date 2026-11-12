@@ -35,13 +35,15 @@ def testToday():
     word = expirationStatus(1, 1)
     print(word)
 
-#def testSoon():
+def testSoon():
+    word = expirationStatus(2, 1) 
+    print(word)
 
+def testOk():
+    word = expirationStatus(10, 1)
+    print(word)
 
-#def testOk():
-
-
-testToday()
+testOk()
 
 
 
