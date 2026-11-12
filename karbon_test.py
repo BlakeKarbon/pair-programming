@@ -3,6 +3,7 @@ import pytest
 
 from karbon_main import expirationStatus
 
+
 @pytest.mark.parametrize(
     ("expiration_date", "today", "expected"),
     [
@@ -28,3 +29,7 @@ def test_missing_date_raises_error(expiration_date, today):
     with pytest.raises(ValueError):
         expirationStatus(expiration_date, today)
 
+
+def test_wrong_type_raises_error():
+    with pytest.raises(TypeError):
+        expirationStatus("2025-01-10", date(2025, 1, 10))
