@@ -1,3 +1,5 @@
+#Partner: Blake Karbon | Branch: solo/blake | Start: 10:08 | Stop: 10:28 | Finished: Yes | Tests: 8.
+
 from datetime import date, datetime
 
 def expirationStatus(expirationDate, today):
