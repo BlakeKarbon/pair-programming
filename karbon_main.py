@@ -1,6 +1,8 @@
 from datetime import date, datetime
 
 def expirationStatus(expirationDate, today):
+    if expirationDate is None or today is None:
+        raise ValueError("expirationDate and today are required")
 
     days = (expirationDate - today).days
 
@@ -11,6 +13,3 @@ def expirationStatus(expirationDate, today):
     if days <= 3:
         return "USE_SOON"
     return "OK"
-
-
-print(expirationStatus(date(2025,1,9),date(2025, 1, 10)))
