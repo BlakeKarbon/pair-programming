@@ -1,4 +1,4 @@
-
+"""Partner: Michael Gavina | Branch: solo/mikey | Start: 10:08 | Stop: 10:28 | Finished: Yes | Tests: 5 """
 
 
 def expirationStatus(expirationDate, today):
@@ -21,7 +21,7 @@ def testError():
     try: 
         expirationStatus(None, 10)
     except TypeError as e:
-        if e == "Expiration Date has no date":
+        if e == TypeError("Expiration Date has no date"):
             print("Pass")
     else:
         print("Fail")
@@ -64,8 +64,8 @@ def testOk():
 
 
 testError()
-#testExpired()
-#testToday()
-#testSoon()
-#testOk()
+testExpired()
+testToday()
+testSoon()
+testOk()
 
