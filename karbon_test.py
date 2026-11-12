@@ -1,0 +1,17 @@
+from datetime import date
+import pytest
+
+from karbon_main import expirationStatus
+
+@pytest.mark.parametrize(
+    ("expiration_date", "today", "expected"),
+    [
+        (date(2025, 1, 9), date(2025, 1, 10), "EXPIRED"),
+        (date(2025, 1, 10), date(2025, 1, 10), "USE_TODAY"),
+        (date(2025, 1, 11), date(2025, 1, 10), "USE_SOON"),
+        (date(2025, 1, 13), date(2025, 1, 10), "USE_SOON"),
+        (date(2025, 1, 14), date(2025, 1, 10), "OK"),
+    ],
+)
+def test_expiration_status(expiration_date, today, expected):
+    assert expirationStatus(expiration_date, today) == expected
