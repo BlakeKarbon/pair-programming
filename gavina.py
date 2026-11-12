@@ -20,30 +20,52 @@ def expirationStatus(expirationDate, today):
 def testError():
     try: 
         expirationStatus(None, 10)
-    except TypeError:
-        print("Test is green")
+    except TypeError as e:
+        if e == "Expiration Date has no date":
+            print("Pass")
     else:
-        print("Test Failed")
+        print("Fail")
+
 
 
 
 def testExpired():
     word = expirationStatus(1, 10)
-    print(word)
+    if word == "EXPIRED":
+        print("Pass")
+    else:
+        print("Fail")
+
 
 def testToday():
     word = expirationStatus(1, 1)
-    print(word)
+    if word == "USE_TODAY":
+        print("Pass")
+    else:
+        print("Fail")
+
 
 def testSoon():
     word = expirationStatus(2, 1) 
-    print(word)
+    if word == "USE_SOON":
+        print("Pass")
+    else:
+        print("Fail")
+
 
 def testOk():
     word = expirationStatus(10, 1)
-    print(word)
+    if word == "OK":
+        print("Pass")
+    else:
+        print("Fail")
 
-testOk()
 
 
+
+testError()
+#testExpired()
+#testToday()
+#testSoon()
+#testOk()
 
