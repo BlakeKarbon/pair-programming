@@ -3,7 +3,7 @@
 
 def expirationStatus(expirationDate, today):
     if expirationDate == None:
-        raise TypeError()
+        raise TypeError("Expiration Date has no date")
 
     days = expirationDate - today
 
@@ -17,8 +17,7 @@ def expirationStatus(expirationDate, today):
         return "OK"
 
 
-def testExpired():
-
+def testError():
     try: 
         expirationStatus(None, 10)
     except TypeError:
@@ -27,8 +26,14 @@ def testExpired():
         print("Test Failed")
 
 
-#def testToday():
 
+def testExpired():
+    word = expirationStatus(1, 10)
+    print(word)
+
+def testToday():
+    word = expirationStatus(1, 1)
+    print(word)
 
 #def testSoon():
 
@@ -36,9 +41,7 @@ def testExpired():
 #def testOk():
 
 
-
-
-testExpired()
+testToday()
 
 
 
