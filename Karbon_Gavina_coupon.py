@@ -1,8 +1,10 @@
 
 
 def applyCoupon(subtotal, couponType, value, minimumSpend):
-    return subtotal * value
-
+    if (minimumSpend > subtotal):
+        return subtotal
+    else:
+        return subtotal * value
 
 
 
@@ -27,3 +29,7 @@ if applyCoupon(subtotal, couponType, value, minimumSpend) != 5.50:
     print("Minimum Spend Check Failed")
 else:
     print("Minimum Spend Check Passed")
+
+
+
+
