@@ -31,5 +31,13 @@ else:
     print("Minimum Spend Check Passed")
 
 
+couponType = "DOLLAR"
+minimumSpend = 5.00
+if applyCoupon(subtotal, couponType, value, minimumSpend) == 5.00:
+    print("Dollar check pass")
+else:
+    print("Dollar check failed")
+
+
 
 
