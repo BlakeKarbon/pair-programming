@@ -22,4 +22,8 @@ if applyCoupon(subtotal, couponType, value, minimumSpend) == 2.75:
 else:
     print("Coupon failed")
 
-
+minimumSpend = 10.00
+if applyCoupon(subtotal, couponType, value, minimumSpend) != 5.50:
+    print("Minimum Spend Check Failed")
+else:
+    print("Minimum Spend Check Passed")
