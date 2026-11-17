@@ -1,7 +1,7 @@
 
 
 def applyCoupon(subtotal, couponType, value, minimumSpend):
-    return subtotal
+    return subtotal * value
 
 
 
