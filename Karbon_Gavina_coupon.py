@@ -1,15 +1,17 @@
 
 
 def applyCoupon(subtotal, couponType, value, minimumSpend):
-    if couponType == "DOLLAR" or couponType == "PERCENT":
-        pass
-    else:
+    if couponType != "DOLLAR" and couponType != "PERCENT":
         raise Exception("Invalid Type for Coupon")
-
+    
     if (minimumSpend > subtotal):
         return subtotal
     else:
         if couponType == "DOLLAR":
+            if 0.01 <= value <= 100.00:
+                pass
+            else:
+                raise Exception("Invalid Type for Coupon")
             return subtotal - value
         elif couponType == "PERCENT":
             return subtotal * value
@@ -60,6 +62,14 @@ try:
     print("Dollar upper bound fail")
 except:
     print("Dollar upper bound pass")
+
+
+value = 0
+try:
+    applyCoupon(subtotal, couponType, value, minimumSpend)
+    print("Dollar lower bound fail")
+except:
+    print("Dollar lower bound pass")
 
 
 
