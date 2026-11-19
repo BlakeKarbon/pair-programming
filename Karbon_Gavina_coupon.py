@@ -4,7 +4,10 @@ def applyCoupon(subtotal, couponType, value, minimumSpend):
     if (minimumSpend > subtotal):
         return subtotal
     else:
-        return subtotal * value
+        if couponType == "DOLLAR":
+            return subtotal - value
+        elif couponType == "PERCENT":
+            return subtotal * value
 
 
 
