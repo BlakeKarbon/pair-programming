@@ -1,6 +1,11 @@
 
 
 def applyCoupon(subtotal, couponType, value, minimumSpend):
+    if couponType == "DOLLAR" or couponType == "PERCENT":
+        pass
+    else:
+        raise Exception("Invalid Type for Coupon")
+
     if (minimumSpend > subtotal):
         return subtotal
     else:
