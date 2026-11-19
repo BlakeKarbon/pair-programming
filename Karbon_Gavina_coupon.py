@@ -41,6 +41,14 @@ if applyCoupon(subtotal, couponType, value, minimumSpend) == 5.00:
 else:
     print("Dollar check failed")
 
+couponType = "POLLO"
+try:
+    applyCoupon(subtotal, couponType, value, minimumSpend)
+    print("Type check fail")
+except:
+    print("Type check pass")
+
+
 
 
 
