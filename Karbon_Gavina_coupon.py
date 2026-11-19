@@ -53,7 +53,13 @@ try:
 except:
     print("Type check pass")
 
-
+couponType = "DOLLAR"
+value = 101.00
+try:
+    applyCoupon(subtotal, couponType, value, minimumSpend)
+    print("Dollar upper bound fail")
+except:
+    print("Dollar upper bound pass")
 
 
 
